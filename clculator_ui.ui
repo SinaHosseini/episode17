@@ -98,8 +98,9 @@ color: rgb(250, 155, 0);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(25, 25, 25);
-color: rgb(250, 155, 0);</string>
+     <string notr="true">background-color: rgb(250, 155, 0);
+background-color: rgb(250, 155, 0);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>=</string>
