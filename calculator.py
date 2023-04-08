@@ -7,15 +7,17 @@ def sub():
     a = int(main_window.txt_box.text())
     main_window.txt_box.setText("")
 
+
 def result():
     b = int(main_window.txt_box.text())
     c = a - b
     main_window.txt_box.setText(str(c))
 
+
 app = QApplication([])
 
 loader = QUiLoader()
-main_window = loader.load("episode17\main_ui.ui")
+main_window = loader.load("episode17\calculator_ui.ui")
 main_window.show()
 
 main_window.btn_sub.clicked.connect(sub)
