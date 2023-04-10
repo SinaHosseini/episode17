@@ -131,7 +131,6 @@ main_window = loader.load("episode17\calculator_ui.ui")
 main_window.show()
 
 percent = False
-main_window.btn_1.clicked.connect(number)
 main_window.btn_sum.clicked.connect(sum)
 main_window.btn_sub.clicked.connect(sub)
 main_window.btn_div.clicked.connect(div)
