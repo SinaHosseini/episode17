@@ -3,5 +3,13 @@ design by **Qt Python**
 
 coding by **Python**
 
+## How work
+A calculator with +, -, × , ÷, %, √, sin, cos, tan, cot, log operations.
+
 ## GUI 
-! [GUI](Screenshot2023-04-08 234324.png)
+![GUI](calculator_GUI.png)
+
+## installation
+```
+pip install pyside6
+```
