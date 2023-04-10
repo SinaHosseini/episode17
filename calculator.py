@@ -1,10 +1,16 @@
 import math
+from functools import partial
 from PySide6.QtWidgets import QApplication
 from PySide6.QtUiTools import QUiLoader
 
 
-def number():
-    ...
+def number(n):
+    main_window.txt_box.text()
+    main_window.txt_box.setText(main_window.txt_box.text() + n)
+
+
+def dot():
+    main_window.txt_box.setText(main_window.txt_box.text() + ".")
 
 
 def sub():
@@ -17,21 +23,21 @@ def sub():
 def sum():
     global a, operator
     operator = "sum"
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     main_window.txt_box.setText("")
 
 
 def div():
     global a, operator
     operator = "div"
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     main_window.txt_box.setText("")
 
 
 def mul():
     global a, operator
     operator = "mul"
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     main_window.txt_box.setText("")
 
 
@@ -41,34 +47,34 @@ def perc():
 
 
 def sqrt():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     b = math.sqrt(a)
     main_window.txt_box.setText(str(b))
 
 
 def sin():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     a = a / 180 * math.pi
     b = math.sin(a)
     main_window.txt_box.setText(str(b))
 
 
 def cos():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     a = a / 180 * math.pi
     b = math.cos(a)
     main_window.txt_box.setText(str(b))
 
 
 def tan():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     a = a / 180 * math.pi
     b = math.tan(a)
     main_window.txt_box.setText(str(b))
 
 
 def cot():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     a = a / 180 * math.pi
     a = math.tan(a)
     b = 1 / a
@@ -76,13 +82,13 @@ def cot():
 
 
 def log():
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     b = math.log(a)
     main_window.txt_box.setText(str(b))
 
 
 def result():
-    b = int(main_window.txt_box.text())
+    b = float(main_window.txt_box.text())
     if operator == "sub":
         if percent == True:
             b = a * b / 100
@@ -139,6 +145,17 @@ main_window.btn_tan.clicked.connect(tan)
 main_window.btn_cot.clicked.connect(cot)
 main_window.btn_log.clicked.connect(log)
 main_window.btn_clear.clicked.connect(clear)
+main_window.btn_0.clicked.connect(partial(number, "0"))
+main_window.btn_1.clicked.connect(partial(number, "1"))
+main_window.btn_2.clicked.connect(partial(number, "2"))
+main_window.btn_3.clicked.connect(partial(number, "3"))
+main_window.btn_4.clicked.connect(partial(number, "4"))
+main_window.btn_5.clicked.connect(partial(number, "5"))
+main_window.btn_6.clicked.connect(partial(number, "6"))
+main_window.btn_7.clicked.connect(partial(number, "7"))
+main_window.btn_8.clicked.connect(partial(number, "8"))
+main_window.btn_9.clicked.connect(partial(number, "9"))
+main_window.btn_dot.clicked.connect(dot)
 
 
 app.exec()
