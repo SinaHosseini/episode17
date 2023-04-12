@@ -16,7 +16,7 @@ def dot():
 def sub():
     global a, operator
     operator = "sub"
-    a = int(main_window.txt_box.text())
+    a = float(main_window.txt_box.text())
     main_window.txt_box.setText("")
 
 
